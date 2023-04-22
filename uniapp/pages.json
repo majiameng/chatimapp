@@ -1,0 +1,669 @@
+{
+
+    "pages": [{
+            "path": "pages/index/launch",
+            "style": {
+                "navigationBarTitleText": "",
+                "app-plus": {
+                    "titleNView": false,
+                    "bounce": "none"
+                }
+            }
+        },
+
+
+        {
+            "path": "pages/index/index",
+            "style": {
+                "navigationBarTitleText": "消息",
+
+                "app-plus": {
+                    "titleNView": false
+                }
+            }
+        },
+
+        {
+            "path": "pages/login/index",
+            "style": {
+
+                "navigationBarTitleText": "登录",
+                "app-plus": {
+                    "titleNView": true,
+                    "bounce": "none"
+                }
+            }
+        },
+        {
+            "path": "pages/login/rule",
+            "style": {
+
+                "navigationBarTitleText": "用户协议",
+                "app-plus": {
+                    "titleNView": true,
+                    "bounce": "none"
+                }
+            }
+        },
+
+        {
+            "path": "pages/circle/circle",
+            "style": {
+                "navigationBarTitleText": "朋友圈",
+                "app-plus": {
+                    "titleNView": {
+                        "buttons": [{
+                            "text": "\ue8e1",
+                            "fontSize": "20",
+                            "fontSrc": "/static/iconfont.ttf",
+                            "name": "add"
+                        }]
+                    }
+                },
+                "enablePullDownRefresh": true
+            }
+        },
+        {
+            "path": "pages/circle/circle_details",
+            "style": {
+                "navigationBarTitleText": "",
+                "app-plus": {
+                    "softinputMode": "adjustResize",
+                    "titleNView": {
+                        "type": "transparent",
+                        "buttons": []
+                    }
+                }
+            }
+        },
+        {
+            "path": "pages/circle/circle_chat_details",
+            "style": {
+                "navigationBarTitleText": "我的消息",
+                "app-plus": {
+
+                    "titleNView": {
+                        "buttons": {
+                            "text": "\ue60b",
+                            "color": "#1AAD19",
+                            "fontSrc": "/static/fonts/iconfont.ttf",
+                            "fontSize": "17px"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "path": "pages/circle/circle/send",
+            "style": {
+                "navigationBarTitleText": "发布我的动态",
+                "app-plus": {
+                    "titleNView": {
+                        "buttons": [{
+                            "text": "\ue60b",
+                            "color": "#ffffff",
+                            "fontSrc": "/static/fonts/iconfont.ttf",
+                            "fontSize": "17px"
+                        }]
+                    }
+                }
+            }
+        },
+
+
+
+        {
+            "path": "pages/mine/order",
+            "style": {
+                "navigationBarTitleText": "账单",
+                "app-plus": {
+                    "bounce": "none",
+                    "titleNView": true
+                }
+            }
+        },
+
+
+        {
+            "path": "pages/mine/profile",
+            "style": {
+                "navigationBarTitleText": "个人资料",
+                "app-plus": {
+                    "bounce": "none"
+                }
+            }
+        },
+
+        {
+            "path": "pages/mine/qrcode",
+            "style": {
+                "navigationBarTitleText": "用户二维码",
+                "app-plus": {
+                    "bounce": "none",
+                    "titleNView": {
+                        "buttons": [{
+                            "text": "\ueb9f",
+                            "fontSize": "20",
+                            "fontSrc": "/static/iconfont.ttf"
+                        }]
+                    }
+
+                },
+                "h5": {
+                    "titleNView": {
+                        "buttons": false
+                    }
+                }
+            }
+        },
+
+
+        {
+            "path": "pages/group/list",
+            "style": {
+                "navigationBarTitleText": "我的群组",
+                "app-plus": {
+                    "bounce": "all",
+                    "titleNView": false
+                }
+            }
+        },
+        {
+            "path": "pages/group/qrcode",
+            "style": {
+                "navigationBarTitleText": "群聊二维码",
+                "app-plus": {
+                    "bounce": "none",
+                    "titleNView": {
+
+                    }
+                }
+            }
+        },
+        {
+            "path": "pages/group/create",
+            "style": {
+                "navigationBarTitleText": "发起群聊",
+                "app-plus": {
+                    "bounce": "none"
+                }
+            }
+        },
+        {
+            "path": "pages/index/contact",
+            "style": {
+                "navigationBarTitleText": "通讯录",
+                "app-plus": {
+                    "titleNView": false,
+                    "bounce": "none"
+                }
+            }
+        },
+
+
+        {
+            "path": "pages/friend/detail",
+            "style": {
+                "navigationBarTitleText": "",
+                "navigationBarTextStyle":"black",
+                "app-plus": {
+                    "titleNView": {
+                        "backgroundColor": "#fff",
+                        "titleColor": "#000000",
+                        
+                        "buttons": [{
+
+                            "text": "\ueb9f",
+                            "fontSize": "20",
+                            "fontSrc": "/static/iconfont.ttf"
+
+                        }]
+                    }
+                }
+            }
+        },
+        {
+            "path": "pages/friend/request",
+            "style": {
+                "navigationBarTitleText": "验证消息",
+                "app-plus": {
+                    "bounce": "all",
+                    "titleNView": false
+
+
+                }
+            }
+        },
+        {
+            "path": "pages/mine/password",
+            "style": {
+                "navigationBarTitleText": "设置密码",
+                "app-plus": {
+                    "bounce": "none",
+                    "titleNView": false
+
+                }
+            }
+        },
+
+
+        {
+            "path": "pages/friend/chat",
+            "style": {
+                "navigationBarTitleText": "私聊",
+                "enablePullDownRefresh": false,
+                "app-plus": {
+                    "bounce": "none",
+                    "titleNView": {
+                        "buttons": [{
+                            "text": "\ueb9f",
+                            "fontSize": "20",
+                            "fontSrc": "/static/iconfont.ttf"
+                        }]
+                    },
+                    "softinput": {
+                        "mode": "adjustResize"
+                    }
+                }
+            }
+        },
+        {
+            "path": "pages/group/chat",
+            "style": {
+                "navigationBarTitleText": "群聊",
+
+
+                "app-plus": {
+
+                    "bounce": "none",
+                    "titleNView": {
+                        "buttons": [{
+                            "text": "\ueb9f",
+                            "fontSize": "20",
+                            "fontSrc": "/static/iconfont.ttf"
+                        }]
+                    },
+                    "softinput": {
+                        "mode": "adjustResize"
+                    }
+
+
+
+                }
+            }
+        },
+        {
+            "path": "pages/group/detail",
+            "style": {
+                "navigationBarTitleText": "",
+                "app-plus": {
+                    "titleNView": false
+                }
+            }
+        },
+
+        {
+            "path": "pages/mine/index",
+            "style": {
+
+                "app-plus": {
+                    "bounce": "none",
+                    "titleNView": false
+                }
+            }
+        },
+
+        {
+            "path": "pages/mine/recharge",
+            "style": {
+                "navigationBarTitleText": "充值",
+                "app-plus": {
+                    "bounce": "none"
+                }
+            }
+        },
+        {
+            "path": "pages/mine/cash",
+            "style": {
+                "navigationBarTitleText": "提现",
+                "app-plus": {
+                    "bounce": "none"
+                }
+            }
+        },
+
+
+        {
+            "path": "pages/web/index",
+            "style": {
+                "navigationBarTitleText": "",
+                "app-plus": {
+                    "bounce": "none",
+                    "titleNView": {
+                        "buttons": [{
+                            "text": "\ueb9f",
+                            "fontSize": "20",
+                            "fontSrc": "/static/iconfont.ttf"
+                        }]
+                    }
+                },
+                "h5": {
+                    "titleNView": {
+                        "buttons": false
+                    }
+                }
+            }
+        }, {
+            "path": "pages/login/froget",
+            "style": {
+
+                "navigationBarTitleText": "忘记密码",
+                "app-plus": {
+                    "titleNView": true,
+                    "bounce": "none"
+                }
+            }
+        }
+
+
+
+        , {
+            "path": "pages/circle/mycircle",
+            "style": {
+                "navigationBarTitleText": "我的朋友圈",
+                "app-plus": {
+                    "bounce": "none",
+                    "titleNView": false
+                }
+            }
+        }
+
+        , {
+            "path": "pages/mine/note",
+            "style": {
+                "navigationBarTitleText": "消息通知设置",
+                "app-plus": {
+                    "bounce": "none",
+                    "titleNView": true
+                }
+            }
+        }
+
+
+        , {
+            "path": "pages/group/index",
+            "style": {
+                "navigationBarTitleText": "聊天室",
+                "app-plus": {
+                    "bounce": "all",
+                    "titleNView": false
+                }
+            }
+        }, {
+            "path": "pages/mine/mobile",
+            "style": {
+                "navigationBarTitleText": "绑定手机",
+                "app-plus": {
+                    "bounce": "all",
+                    "titleNView": true
+                }
+            }
+        }, {
+            "path": "pages/mine/bank",
+            "style": {
+                "navigationBarTitleText": "我的银行卡",
+                "app-plus": {
+                    "bounce": "none",
+                    "titleNView": false
+
+                }
+            }
+        }, {
+            "path": "pages/mine/password1",
+            "style": {
+                "navigationBarTitleText": "设置密码",
+                "app-plus": {
+                    "bounce": "none",
+                    "titleNView": false
+
+                }
+            }
+        }
+
+
+        , {
+            "path": "pages/group/userset",
+            "style": {
+                "navigationBarTitleText": "设置",
+                "app-plus": {
+                    "titleNView": true,
+                    "bounce": "none"
+                }
+            }
+        }, {
+            "path": "pages/friend/userset",
+            "style": {
+                "navigationBarTitleText": "设置",
+                "app-plus": {
+                    "titleNView": true,
+                    "bounce": "none"
+                }
+            }
+        }
+
+        , {
+            "path": "pages/friend/userlist",
+            "style": {
+                "navigationBarTitleText": "选择联系人",
+                "app-plus": {
+                    "titleNView": true,
+                    "bounce": "none"
+                }
+            }
+        },
+        {
+            "path": "pages/login/qrcode",
+            "style": {
+                "navigationBarTitleText": "登录确认",
+                "app-plus": {
+                    "titleNView": true,
+                    "bounce": "none"
+                }
+            }
+        }, {
+            "path": "pages/mine/note1",
+            "style": {
+                "navigationBarTitleText": "系统公告",
+                "app-plus": {
+                    "titleNView": true,
+                    "bounce": "none"
+                }
+            }
+        }, {
+            "path": "pages/mine/notedetail",
+            "style": {
+                "navigationBarTitleText": "公告详情",
+                "app-plus": {
+                    "titleNView": true,
+                    "bounce": "none"
+                }
+            }
+        }
+
+        , {
+            "path": "pages/friend/readpacket",
+            "style": {
+                "navigationBarTitleText": "发红包",
+                "app-plus": {
+                    "titleNView": true,
+                    "bounce": "none"
+                }
+            }
+        }, {
+            "path": "pages/friend/redpacket_detail",
+            "style": {
+                "navigationBarTitleText": "红包详情",
+                "app-plus": {
+                    "titleNView": false,
+                    "bounce": "none"
+                }
+            }
+        }, {
+            "path": "pages/friend/logout_words",
+            "style": {
+                "navigationBarTitleText": "群印象",
+                "app-plus": {
+                    "titleNView": true,
+                    "bounce": "none"
+                }
+            }
+        }, {
+            "path": "pages/mine/joinvip",
+            "style": {
+                "navigationBarTitleText": "加入VIP",
+                "app-plus": {
+                    "titleNView": true,
+                    "bounce": "none"
+                }
+            }
+        }, {
+            "path": "pages/mine/invite",
+            "style": {
+                "navigationBarTitleText": "邀请好友",
+                "app-plus": {
+                    "titleNView": false,
+                    "bounce": "none"
+                }
+            }
+        }, {
+            "path": "pages/mine/my_invite",
+            "style": {
+                "navigationBarTitleText": "我的团队",
+                "app-plus": {
+                    "titleNView": true,
+                    "bounce": "none"
+                }
+            }
+        }, {
+            "path": "pages/mine/user_add",
+            "style": {
+                "navigationBarTitleText": "手动开户",
+                "app-plus": {
+                    "titleNView": true,
+                    "bounce": "none"
+                }
+            }
+        }, {
+            "path": "pages/mine/user_invite",
+            "style": {
+                "navigationBarTitleText": "Ta的下级",
+                "app-plus": {
+                    "titleNView": true,
+                    "bounce": "none"
+                }
+            }
+        }
+
+        , {
+            "path": "pages/mine/vipinfo",
+            "style": {
+                "navigationBarTitleText": "VIP特权介绍",
+                "app-plus": {
+                    "titleNView": true,
+                    "bounce": "none"
+                }
+            }
+        },
+        {
+            "path": "pages/index/find",
+            "style": {
+                "navigationBarTitleText": "发现",
+                "app-plus": {
+                    "titleNView": false,
+                    "bounce": "none"
+                }
+            }
+        },
+        {
+            "path": "pages/mine/menu",
+            "style": {
+                "navigationBarTitleText": "设置",
+                "app-plus": {
+                    "titleNView": true,
+                    "bounce": "none"
+                }
+            }
+        }
+        ,{
+            "path" : "pages/mine/bag",
+          "style": {
+              "navigationBarTitleText": "我的钱包",
+              "app-plus": {
+                  "titleNView": true,
+                  "bounce": "none"
+              }
+          }
+        }
+        ,{
+            "path" : "pages/index/backlist",
+            "style" : {
+                "navigationBarTitleText": "黑名单",
+                "app-plus": {
+                    "titleNView": true,
+                    "bounce": "none"
+                }
+            }
+        }
+        ,{
+            "path" : "pages/friend/report",
+            "style" : {
+                "navigationBarTitleText": "投诉",
+                "app-plus": {
+                    "titleNView": true,
+                    "bounce": "none"
+                }
+            }
+        }
+      
+    ],
+    "globalStyle": {
+        "navigationBarTextStyle": "white",
+        "navigationBarTitleText": "itel",
+        "navigationBarBackgroundColor": "#4399fe",
+        "backgroundColor": "#FFFFFF"
+    },
+    "tabBar": {
+        "color": "#333333",
+        "selectedColor": "#2319dc",
+        "borderStyle": "black",
+        "backgroundColor": "#fbfbfb",
+        "list": [{
+                "pagePath": "pages/index/index",
+                "iconPath": "static/tabbar/hh.png",
+                "selectedIconPath": "static/tabbar/hh1.png",
+                "text": "消息"
+            },
+            {
+                "pagePath": "pages/index/contact",
+                "iconPath": "static/tabbar/txl.png",
+                "selectedIconPath": "static/tabbar/txl1.png",
+                "text": "通信录"
+            },
+
+            {
+                "pagePath": "pages/index/find",
+                "iconPath": "static/tabbar/cl1.png",
+                "selectedIconPath": "static/tabbar/cl.png",
+                "text": "发现"
+            },
+
+
+            {
+                "pagePath": "pages/mine/index",
+                "iconPath": "static/tabbar/wd.png",
+                "selectedIconPath": "static/tabbar/wd1.png",
+                "text": "我的"
+            }
+        ]
+    }
+}
