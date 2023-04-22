@@ -77,17 +77,17 @@
 			},
 			goDetail() {
                 
-                if(this.user.banknum<1){
+                if(this.user.mobile == ""){
                     uni.showModal({
                     	title: '提示',
-                    	content: "绑定银行卡后才可以枪红包",
+						content: "绑定手机号后才可以发送红包",
                     	showCancel: true,
                     	cancelText: '关闭',
                     	confirmText: '立即绑定',
                     	success: res => { 
                     		if(res.confirm) {
                               uni.navigateTo({
-                                url:"/pages/mine/bank" 
+                               url:"/pages/mine/mobile" 
                               })
                     		}
                     	}

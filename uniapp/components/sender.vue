@@ -376,23 +376,37 @@ const recorderManager = uni.getRecorderManager();
             
             
             sendRedpactet(){
-                
-                if(this.user.banknum<1){
-                    uni.showModal({
-                    	title: '提示',
-                    	content: "绑定银行卡后才可以发送红包",
-                    	showCancel: true,
-                    	cancelText: '关闭',
-                    	confirmText: '立即绑定',
-                    	success: res => { 
-                    		if(res.confirm) {
-                              uni.navigateTo({
-                                url:"/pages/mine/bank" 
-                              })
-                    		}
-                    	}
-                    });  
-                    return  false;
+                if(this.user.mobile == ""){
+                    // uni.showModal({
+                    // 	title: '提示',
+                    // 	content: "绑定银行卡后才可以发送红包",
+                    // 	showCancel: true,
+                    // 	cancelText: '关闭',
+                    // 	confirmText: '立即绑定',
+                    // 	success: res => { 
+                    // 		if(res.confirm) {
+                    //           uni.navigateTo({
+                    //             url:"/pages/mine/bank" 
+                    //           })
+                    // 		}
+                    // 	}
+                    // });  
+                    // return  false;
+					uni.showModal({
+						title: '提示',
+						content: "绑定手机号后才可以发送红包",
+						showCancel: true,
+						cancelText: '关闭',
+						confirmText: '立即绑定',
+						success: res => { 
+							if(res.confirm) {
+					          uni.navigateTo({
+                               url:"/pages/mine/mobile" 
+					          })
+							}
+						}
+					});  
+					return  false;
                 }else{
                     uni.navigateTo({
                         url:'../friend/readpacket?isgroup='+this.isgroup+'&id='+this.groupid

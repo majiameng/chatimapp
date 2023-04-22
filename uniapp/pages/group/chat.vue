@@ -62,7 +62,6 @@
 			};
 		},
 		onLoad(opts) {
-         //   console.log(opts);
              if(opts.atme>0) this.atme=opts.atme
                  if(opts.msg_id>0) this.at_msg_id=opts.msg_id
                
@@ -204,7 +203,7 @@
                else this.no_add=false;      
                      
               	uni.setNavigationBarTitle({
-              		title: `${group.name}(${group.people_count}人)`
+              		title: `${group.name}(${group.people_count}人)余额:${group.coin}币`
               	})
               
               uni.setStorageSync('group_'+group.id,group);

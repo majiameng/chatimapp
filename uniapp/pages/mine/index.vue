@@ -25,11 +25,7 @@
 		            <div>账号:{{user.name}}
                     <image src="/static/img/vip0.png" @tap='joinvip()' class="vipbtn" v-if="user.vip==0" />
                     <image src="/static/img/vip1.png" @tap='joinvip()' class="vipbtn"  style="height: 20px;" v-if="user.vip>0" /> 
-                    
-                
                     </div>
-		
-                  
 		        </li>
 		
 		    </ul>
@@ -37,12 +33,9 @@
                  <view class="emoji"  style="display: inline-block;vertical-align: middle;margin-right: 2px;;font-size: 24px;color: #fff">&#xe613;</view>
                      <uni-icons type="arrowright" style="font-size: 16px; color: #fff;display: inline-block;vertical-align: middle;font-weight: 600;"></uni-icons>
              </view>
-		
-		    
-		
 		</div>
 		
-        
+        <!-- 
         <view class="showlines"  @tap="$jump('mine.bag')">
             <view>
                  <image src="/static/img/icon/pay.png"/>
@@ -65,9 +58,6 @@
                 <uni-icons type="arrowright" style="font-size: 16px; color: #666;display: inline-block;vertical-align: middle;font-weight: 600;"></uni-icons>
             </view>
         </view>
-        
-    
-       
         <view class="showlines" v-if="system.inviteopen==1  && user.isdaili==1" @tap="$jump('mine.menu',{act:'team'})">
             <view>
                  <image src="/static/img/group.png" style="border-radius: 50%;"/>
@@ -79,6 +69,42 @@
                 <uni-icons type="arrowright" style="font-size: 16px; color: #666;display: inline-block;vertical-align: middle;font-weight: 600;"></uni-icons>
             </view>
         </view>
+		 -->
+		
+		<view class="showlines" @click="develop()">
+		    <view>
+		         <image src="/static/img/icon/pay.png"/>
+		    </view>
+		    <view>
+		 我的钱包
+		    </view>
+		    <view>
+		        <uni-icons type="arrowright" style="font-size: 16px; color: #666;display: inline-block;vertical-align: middle;font-weight: 600;"></uni-icons>
+		    </view>
+		</view>
+		<view class="showlines" v-if="user.vip==0" @click="develop()">
+		    <view>
+		         <image src="/static/img/vip1.png"/>
+		    </view>
+		    <view>
+		            加入VIP
+		    </view>
+		    <view>
+		        <uni-icons type="arrowright" style="font-size: 16px; color: #666;display: inline-block;vertical-align: middle;font-weight: 600;"></uni-icons>
+		    </view>
+		</view>
+		<view class="showlines" v-if="system.inviteopen==1  && user.isdaili==1" @click="develop()">
+		    <view>
+		         <image src="/static/img/group.png" style="border-radius: 50%;"/>
+		    </view>
+		    <view>
+		 我的下级
+		    </view>
+		    <view>
+		        <uni-icons type="arrowright" style="font-size: 16px; color: #666;display: inline-block;vertical-align: middle;font-weight: 600;"></uni-icons>
+		    </view>
+		</view>
+		
         <view class="showlines" @tap="$jump('mine.menu',{act:'setting'})">
             <view>
                  <image src="/static/img/icon/setting.png"/>
@@ -194,6 +220,13 @@
         },
       
 		methods:{
+            develop(){
+				uni.showToast({
+					title: "正在开发中ing",
+					icon:'none',
+					duration:850
+				});
+            },
           
             downapp(){
                 

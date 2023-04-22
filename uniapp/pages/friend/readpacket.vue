@@ -7,8 +7,12 @@
         <view class="right">
             <input class="input" type="digit" v-if="money>0" v-model="money" maxlength="5"/>
                     <input class="input" type="digit" v-else placeholder="0.00" @input="money=$event.detail.value" />
-            元
-            
+            <block v-if="isgroup==1">
+                币
+			</block>
+			<block v-else>
+				元
+			</block>
         </view>            
         </view>
         
@@ -42,16 +46,16 @@
        
         
         <view class="line">
-           
             <input class="input1" :placeholder="system.redpacket_title" v-model="title"/>
-                 
         </view>
 		
         <view class="money_show">
             <view class="icon">￥</view>
             <view class="title">{{moneytotal}}</view>
         </view>
-        
+        <view class="money_show" v-if="this.isgroup==1 && this.group.is_owner==1">
+            您是群主，发送红包不消耗币
+        </view>
         <view :class="{'sendbtn':true,'active':issend}" @tap='subsend()'>塞进红包</view>
         
         <view class="bottom">
@@ -63,6 +67,7 @@
 </template>
 
 <script>
+	import api from "../../library/index.js"
           import payment from '../../components/payment.vue'
 	export default {
         components: {
@@ -76,6 +81,7 @@
                 money_title:'总金额',
                 type:1,
                 money:'0.00',
+                coin:0,
                 num:0,
                 title:'',
                 group:'',
@@ -192,24 +198,48 @@
                     })
                     return false;
                 }
-                if(parseFloat(this.moneytotal)>parseFloat(this.user.money1)){
-                   uni.showModal({
-                   	title: '可用余额不足',
-                   	content: "您的可用余额不足，请先去充值！",
-                   	showCancel: true,
-                   	cancelText: '取消',
-                   	confirmText: '去充值',
-                   	success: res => {
-                         
-                   		if(res.confirm) {
-                             uni.redirectTo({
-                               url:"/pages/mine/recharge"  
-                             })
-                   		}
-                   	}
-                   });
-                    return false;
-                }
+				/** tinymeng */
+				if(this.isgroup == 1){
+					if(this.group.is_owner != 1){//不是群主
+						if(parseFloat(this.moneytotal)>parseFloat(this.coin)){
+						   uni.showModal({
+						   	title: '可用余额不足',
+						   	content: "您的可用余额不足，请联系管理员！",
+						   	showCancel: true,
+						   	cancelText: '取消',
+						   	confirmText: '联系管理员',
+						   	success: res => {
+						   		// if(res.confirm) {
+						             // uni.redirectTo({
+						             //   url:"/pages/mine/recharge"  
+						             // })
+						   		// }
+						   	}
+						   });
+						    return false;
+						}
+					}
+				}else{
+					if(parseFloat(this.moneytotal)>parseFloat(this.user.money1)){
+					   uni.showModal({
+					   	title: '可用余额不足',
+					   	content: "您的可用余额不足，请先去充值！",
+					   	showCancel: true,
+					   	cancelText: '取消',
+					   	confirmText: '去充值',
+					   	success: res => {
+					         
+					   		if(res.confirm) {
+					             uni.redirectTo({
+					               url:"/pages/mine/recharge"  
+					             })
+					   		}
+					   	}
+					   });
+					    return false;
+					}
+				}
+				
                 if(this.title) var title=this.title;
                 else var title=this.system.redpacket_title;
                 this.payinfo={isgroup:this.isgroup,type:this.type,permoney:this.money,num:this.num,title:title,chatid:this.id,summoney:this.moneytotal}
@@ -225,10 +255,18 @@
                  this.type=2;
                  this.num=1;
              }
-               else{
-                    this.group = uni.getStorageSync('group_'+this.id);
-                    
-               }
+            else{
+				/** tinymeng */
+				this.group = uni.getStorageSync('group_'+this.id);    
+				this.coin = this.group.coin
+           }
+			   
+			  //  api.getGroupInfo({
+					// group_id: this.id,
+			  //      from_id: this.user.id,
+			  //  }).then(res => {
+			  //        this.coin = res.data.coin;
+			  //  }) 
            }
         
 	}

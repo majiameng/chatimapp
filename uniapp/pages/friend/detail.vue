@@ -61,12 +61,14 @@
         </view>
         
         
+        <view class="cell arrow" style="margin-top: 0px;" v-if="showUpdateCoin" @tap="open_updateCoin"   >
+        	<view class="cell-hd" style="color: #666;font-size: 14px;">修改用户币</view>
+            <view class="cell-hd" style="text-align: left;width:calc(100% - 260upx) ;"></view>
+        	<view class="cell-hb emoji" style="width: 100upx;"></view>
+        </view>
         <view class="cell arrow" style="margin-top: 0px;" v-if="userInfo.isfriend" @tap="open_friendset"   >
         	<view class="cell-hd" style="color: #666;font-size: 14px;">更多设置</view>
-            <view class="cell-hd" style="text-align: left;width:calc(100% - 260upx) ;">
-                   
-                
-            </view>
+            <view class="cell-hd" style="text-align: left;width:calc(100% - 260upx) ;"></view>
         	<view class="cell-hb emoji" style="width: 100upx;"></view>
         </view>
       </view>
@@ -152,12 +154,14 @@
                 imgs:[],
                 showMenu:false,
                 no_tip:false,
+                showUpdateCoin:false,
              pro_title:'添加好友请求',
              pro_text:'',
              placeholder:'',
              pro_type:'',
              tipstype:0,
              user:uni.getStorageSync('userInfo'),
+             group:{},
              group_id:0,
              isreq:false,
              reqcon:''
@@ -304,6 +308,12 @@
                   
               })  
             },
+            open_updateCoin(){
+              uni.navigateTo({
+                  url:'../friend/updateCoin?id='+this.id+'&group_id='+this.group_id
+                  
+              })  
+            },
 			getUserInfo(id){
                 var userid=id;
          
@@ -390,6 +400,12 @@
                 if(item.storekey=='U'+this.id) this.no_tip=true;
                 
             })
+			
+			this.group = uni.getStorageSync('group_'+this.group_id);
+			if(this.group.is_owner == 1){
+				//是群主才能修改
+				this.showUpdateCoin = true
+			}
             
         },
         onShow() {
