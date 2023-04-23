@@ -15,11 +15,10 @@
 		    <li>新手机号：</li>
 		    <li>
  <input type="text" class="input1" v-model="mobile" placeholder="输入新手机号码"  style="width: 150px;" />
-
 		    </li>
 		
 		</ul>
- 
+ <!-- 
 		<ul class="profile" >
 		    <li>验证码：</li>
 		    <li><input type="text" class="input1" id="randcode" v-model="randcode" placeholder="短信验证码" maxlength="6"
@@ -36,7 +35,7 @@
 		    </li>
 		
 		</ul>
-		
+		 -->
 		 <view style="margin:15px auto;display:block;width: 80%;">
 
 		
@@ -146,15 +145,15 @@
                           
                           return false;
                       }
-                      if(this.randcode==''){
-                          uni.showToast({
-                             icon:'none',
-                             title:'短信验证码不能为空',
-                             duration:1000
-                          })
+                  //     if(this.randcode==''){
+                  //         uni.showToast({
+                  //            icon:'none',
+                  //            title:'短信验证码不能为空',
+                  //            duration:1000
+                  //         })
                   
-                          return false;
-                      }      
+                  //         return false;
+                  //     }      
           http.setWait(true).post('user.php?act=mobile',{id:this.user.id,mobile:mobile,randcode:this.randcode}).then(res=>{
                if(res.code=='200'){
                   
