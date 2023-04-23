@@ -449,8 +449,17 @@
                     "bounce": "none"
                 }
             }
-        }
-
+        },
+		{
+		    "path": "pages/friend/updateCoin",
+		    "style": {
+		        "navigationBarTitleText": "设置用户币",
+		        "app-plus": {
+		            "titleNView": true,
+		            "bounce": "none"
+		        }
+		    }
+		}
         , {
             "path": "pages/friend/userlist",
             "style": {

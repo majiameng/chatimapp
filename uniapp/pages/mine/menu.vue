@@ -27,7 +27,7 @@
             list.push({title:'绑定手机',url:'mine.mobile'});
             list.push({title:'登录密码',url:'mine.password'});
             list.push({title:'资金密码',url:'mine.password1'});
-            list.push({title:'我的银行卡',url:'mine.bank'});
+            // list.push({title:'我的银行卡',url:'mine.bank'});
             list.push({title:'消息通知设置',url:'mine.note'});   
            }
           else if(opts.act=='team'){

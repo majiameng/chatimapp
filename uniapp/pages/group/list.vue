@@ -14,7 +14,7 @@
                       <image :src="imgshow(m.avatar)"></image>
                       </div>
                        <div class="info">
-                               <div class="title">{{m.name}}</div>
+                               <div class="title">{{m.name}} (余额:{{m.coin}}币)</div>
                                <div>
                                    <uni-icons type='person' style="font-size: 16px;font-weight: 700;"></uni-icons>
                                {{m.people_count}}/{{m.people_max}}人</div>
@@ -37,7 +37,7 @@
          	</view>
          </view>
       
-<tabbar></tabbar>
+		<tabbar></tabbar>
 	</view>
 </template>
 
