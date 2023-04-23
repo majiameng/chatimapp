@@ -333,6 +333,7 @@
                     this.$socket.send(data11);	
                     this.$action.bindcid();
                      var urls=  uni.getStorageSync('gourl');      
+					 console.log(urls)
                         if(urls){
                             // console.log(urls);
                              uni.reLaunch({
@@ -340,11 +341,12 @@
                              })
                         }
                          else{
+							 console.log(1111111111111111)
                              uni.reLaunch({
                              	url: '../index/index'
                              })
                          }
-               
+						 return
                 
             },
 			

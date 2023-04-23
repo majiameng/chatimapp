@@ -240,7 +240,15 @@
                  if(this.$action.check_userlock()==false) return false;
                
               if(num==0){
-                    
+                  /** tinymeng */
+                  if(this.user.iscreategroup != 1){
+                      uni.showToast({
+                          title: '您没有操作权限，请联系管理员',
+                          icon: 'none',
+                          duration: 2000
+                      })
+                      return false;
+                  }
                       if(this.user.nickname=='' || this.user.nickname==this.user.name){
                         this.$action.profileTips('未设置昵称，不能创建群','/pages/group/create')   ;
                        return false;
@@ -482,6 +490,15 @@
                 this.update_msglist(msglist);
                 this.$action.setStatusTips();
             },
+			/** 获取用户信息 */
+			getUserInfo(){
+			   api.getUserInfo({friend_uid:uni.getStorageSync('access_token')})
+			   .then(res=>{
+				   if(res.code == 200){
+						uni.setStorageSync('userInfo',res.data)
+				   }
+				});
+			}
           
 		},
         created() {
@@ -514,6 +531,7 @@
          this.$jump('login.index');
      }
      
+     this.getUserInfo()
 
 		},
         onLoad(){
@@ -541,7 +559,6 @@
                      },3000)
                     
                 }
-        
         }
 	}
     

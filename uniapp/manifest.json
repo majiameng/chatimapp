@@ -18,7 +18,8 @@
         "modules" : {
             "VideoPlayer" : {},
             "Push" : {},
-            "Payment" : {}
+            "Payment" : {},
+            "Camera" : {}
         },
         /* 模块配置 */
         "distribute" : {
@@ -62,7 +63,9 @@
                 },
                 "ad" : {},
                 "push" : {
-                    "unipush" : {}
+                    "unipush" : {
+                        "offline" : false
+                    }
                 },
                 "geolocation" : {},
                 "share" : {},

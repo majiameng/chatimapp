@@ -181,7 +181,15 @@ import http from "../../library/http.js"
             
             }  
             else if(num==1){
-                
+                /** tinymeng */
+                if(this.user.iscreategroup != 1){
+                    uni.showToast({
+                        title: '您没有操作权限，请联系管理员',
+                        icon: 'none',
+                        duration: 2000
+                    })
+                    return false;
+                }
                   if(this.user.nickname==''){
                     this.$action.profileTips('未设置昵称，不能创建群','/pages/group/create')   ;
                    return false;
@@ -246,7 +254,15 @@ import http from "../../library/http.js"
              });
              
            },
-		
+			/** 获取用户信息 */
+			getUserInfo(){
+			   api.getUserInfo({friend_uid:uni.getStorageSync('access_token')})
+			   .then(res=>{
+				   if(res.code == 200){
+					   uni.setStorageSync('userInfo',res.data)
+				   }
+				});
+			}
 		},
 		
 		onShow() {
@@ -254,6 +270,7 @@ import http from "../../library/http.js"
 			this.getMyGroup();   
            this.setrightmenu();
 
+		this.getUserInfo()
 		},
 		onLoad(opts) {
 		if(opts.method>0) this.navselect=opts.method;

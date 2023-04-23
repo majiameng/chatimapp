@@ -198,16 +198,15 @@
                      if(this.$action.check_userlock()==false) return false;
                    
                   if(num==0){
-                        /** tinymeng */
-                        if(this.user.iscreategroup == 0){
-							uni.showModal({
-								title: '提示',
-								content: "您没有操作权限，请联系管理员",
-								showCancel: true,
-								success: res => {}
-							});
-							return false;
-						}
+                      /** tinymeng */
+                      if(this.user.iscreategroup != 1){
+                          uni.showToast({
+                              title: '您没有操作权限，请联系管理员',
+                              icon: 'none',
+                              duration: 2000
+                          })
+                          return false;
+                      }
                           if(this.user.nickname=='' || this.user.nickname==this.user.name){
                             this.$action.profileTips('未设置昵称，不能创建群','/pages/group/create')   ;
                            return false;
@@ -262,14 +261,18 @@
                         },
                          // #endif 
                     ]
-					/** tinymeng */
-					// if(this.user.iscreategroup == 1){
-					// 	// action.unshift()
-					// }
                   this.menuitem=action;
                 },
-                
-           
+			/** 获取用户信息 */
+			getUserInfo(){
+			   api.getUserInfo({friend_uid:uni.getStorageSync('access_token')})
+			   .then(res=>{
+				   if(res.code == 200){
+					   console.log(res)
+					   this.user = res.data
+				   }
+				});
+			}
         },
         onShow() {
           uni.hideKeyboard();
@@ -279,10 +282,11 @@
               
            }else{
            
-               uni.setStorageSync('gourl','/pages/contact/index');
+               uni.setStorageSync('gourl','/pages/index/contact');
               
                this.$jump('login.index');
            }
+		   this.getUserInfo();
         },
         onLoad() {
             this.pinyin_init();
